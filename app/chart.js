@@ -54,7 +54,7 @@ class Chart {
                 }
             },
             color: {
-                pattern: ['#333333','#9e003f']
+                pattern: ['#333333','#5BBF48']
             },
             axis: {
                 // rotated: true,
@@ -100,7 +100,7 @@ class Chart {
             },
             tooltip: {
                 contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
-                    return '<div class="chart-tooltip gray3">' + d[0].x + '</div><div class="chart-tooltip red"><span class="tooltip-label">Veterans:</span>' +
+                    return '<div class="chart-tooltip gray3">' + d[0].x + '</div><div class="chart-tooltip green3"><span class="tooltip-label">Veterans:</span>' +
                         '<span class="tooltip-value">' + defaultValueFormat(d[1].value) + '</span></div><div class="chart-tooltip gray5"><span class="tooltip-label">Total:</span>' +
                         '<span class="tooltip-value">' + defaultValueFormat(d[0].value) + '</span></div>'
                 }
