@@ -25,12 +25,14 @@ class Chart {
             data: {
                 xs: {
                     'Veterans': 'x',
-                    'Total': 'x'
+                    'MN': 'x',
+                    'Civilian': 'x'
                 },
                 columns: [
-                    ['x', 2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018],
-                    ['Total', 10.5,10.6,10.8,11.2,10.8,11.2,12.4,12,12.1,12.2,13.1,13.2,13.8,null],
-                    ['Veterans', 25.29127942,27.56077395,30.40881612,28.09813914,27.80677961,24.07560268,30.53518362,null,null,25.7,20.4,28.2,null,null]
+                    ['x', 2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020],
+                    ['MN', 10.68,10.73,10.98,11.39,11.06,11.43,12.78,11.98,12.52,12.58,13.21,13.48,14.04,null,null,null],
+                    ['Civilian', 13.2440138,12.61459328,12.84279783,13.59419645,13.19324572,14.12208225,15.76278922,14.90091295,15.21367314,15.1208931,16.14705512,16.02783739,16.76288124,17.44574374,null,null],
+                    ['Veterans', 25.29127942,27.56077395,30.40881612,28.09813914,27.80677961,24.07560268,27.2635568,27.24662006,29.65625436,32.25596348,31.98171764,37.64648343,38.5471989,35.32884702,null,null]
                 ],
                 type: 'line',
                 line: {
@@ -46,7 +48,7 @@ class Chart {
             point: {
                 show: true,
                 r: function(d) {
-                    if (d.x == 2017) {
+                    if (d.x == 2018) {
                         return 6;
                     } else {
                         return 3;
@@ -54,7 +56,7 @@ class Chart {
                 }
             },
             color: {
-                pattern: ['#333333','#5BBF48']
+                pattern: ['#CCCCCC','#F2AF80','#5BBF48']
             },
             axis: {
                 // rotated: true,
@@ -79,7 +81,7 @@ class Chart {
                     tick: {
                         // rotate: -75,
                         multiline: false,
-                        values: [2005, 2009, 2014, 2018]
+                        values: [2005, 2010, 2015, 2020]
                     },
                     // height: 40
                 }
@@ -100,8 +102,9 @@ class Chart {
             },
             tooltip: {
                 contents: function(d, defaultTitleFormat, defaultValueFormat, color) {
-                    return '<div class="chart-tooltip gray3">' + d[0].x + '</div><div class="chart-tooltip green3"><span class="tooltip-label">Veterans:</span>' +
-                        '<span class="tooltip-value">' + defaultValueFormat(d[1].value) + '</span></div><div class="chart-tooltip gray5"><span class="tooltip-label">Total:</span>' +
+                    return '<div class="chart-tooltip gray3">' + d[0].x + '</div><div class="chart-tooltip green3"><span class="tooltip-label">Veteran:</span>' +
+                        '<span class="tooltip-value">' + defaultValueFormat(d[2].value) + '</span></div><div class="chart-tooltip orange2"><span class="tooltip-label">Civilian:</span>' +
+                        '<span class="tooltip-value">' + defaultValueFormat(d[1].value) + '</span></div><div class="chart-tooltip gray2"><span class="tooltip-label">Total:</span>' +
                         '<span class="tooltip-value">' + defaultValueFormat(d[0].value) + '</span></div>'
                 }
             }
