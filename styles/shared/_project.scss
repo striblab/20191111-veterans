@@ -153,6 +153,10 @@ h2 {
     font-weight:bold;
   }
 
+  .chart, .chart .overlay {
+    pointer-events:none !important;
+  }
+
   .chart .c3-line {
     stroke-width: 6px !important;
   }
